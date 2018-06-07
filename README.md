@@ -68,8 +68,45 @@ public Context getApplicationContext()
 
 ```
 
-2. ListView
+2. ListView & RecyclerView
+
+ +  ListView?
+ ```
+Android App 제작시 UI구성에 필수적인 요소.
+UI에서 보여줘야하는 ITEM의 갯수가 동적인 경우 각각의 뷰를 구성해주고 이 뷰를 리스트로 구현함으로써,
+ITEM의 변화에따라 자동으로 변화된 ViEW를 제공해준다.
+ ```
+
+
++ How To Use?
+```
+Adapter, Model을 이용해 구현한다.
+
+Model : 각각의 VIEW가 가져야할 정보를 가지고있는 객체.
+
+Adapter : BaseAdapter를 기본으로 상속받아 ArrayAdapter등이 있으며 model의 layout과 model의 LIST, acvtivity의 context를 생성자로 받아서 생성되어
+생성자의 정보를 가지고 각각 모델의 view를 getView에서 만들어준다.
+생성되는 UI의 순서는 model List의 index를 참조하여 낮은 숫자일수록 상단에 위치한다.
+
+1.item의 model 객체 생성
+2.각 item을 구성할 layout 생성
+3.ArrayList<model> modelList 생성 및 item Add
+4.ListView의 layout 구성
+5.adapter의 getView에서 Model의 정보를 이용해 뷰에 텍스트 및 이미지 할당
+5.ListView의 Acitivity에서 adapter를 생성 및 setAdapter.
+
+```
+
+ + RecyclerView
+```
+
+
+```
 
 3. NFC tag
 
 4. SharedPreference
+
+5. Parcelable Object (pass the Custom Object by intent)
+
+6.
